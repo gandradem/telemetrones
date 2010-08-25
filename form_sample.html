@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Form Sample</title>
+	<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" />
+</head>
+<body>
+  <div id='form_wrapper'>
+  <form id="telemetron_form" action="ajax.form.php" method="post">
+		<div id="form_box">
+			<div>
+				<p>Id:</p>
+				<input type="text" id="telemetron_id" name="telemetron_id" value="" />
+			</div>
+			<div>
+        <p id="zone_text">Zona:</p><br/>
+			</div>
+			<input type="hidden" name="x" value="" id="x" />
+			<input type="hidden" name="y" value="" id="y" />
+			<input type="hidden" name="zone_id" id="zone_id" value="" />
+			<input type="submit" name="button" id="submitter" />
+			<input type="submit" name="cbutton" id="canceler" value="cancel" />
+		  <span class="clr"><!-- spanner --></span>
+		</div>
+	</form>
+  <div id="log">
+		<h3>Response</h3>
+		<div id="log_res"><!-- spanner --></div>
+	</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<telemetrones>
+    <telemetron id="1" nombre="Jacinto X2" idDivision="1" color="2" x="615" y="200" info="Ferrocarril pasando"/>
+    <telemetron id="2" nombre="Bob 11" idDivision="1" color="1" x="620"  y="145" info="Error fatal"/>
+    <telemetron id="3" nombre="Wally 3" idDivision="1" color="3" x="585"  y="300" info="Ferrocarril no pasando"/>
+    <telemetron id="4" nombre="Telemetron XS" idDivision="1" color="1" x="399"  y="145" info="Funcionando correctamente"/>
+    <telemetron id="88" nombre="Modelo 32" idDivision="1" color="1" x="591"  y="516" info="Funcionando cool"/>
+    <telemetron id="5" nombre="Name X" idDivision="2" color="2" x="667" y="50" info="Ferrocarril pasando"/>
+    <telemetron id="6" nombre="Name Y" idDivision="2" color="1" x="250"  y="45" info="Error fatal"/>
+    <telemetron id="7" nombre="Name Z" idDivision="2" color="3" x="540"  y="225" info="Ferrocarril no pasando"/>
+    <telemetron id="8" nombre="eman A" idDivision="2" color="1" x="260"  y="225" info="Funcionando correctamente"/>
+    <telemetron id="9" nombre="eman B" idDivision="3" color="2" x="663" y="371" info="Ferrocarril pasando"/>
+    <telemetron id="10" nombre="eman C" idDivision="3" color="1" x="600"  y="291" info="Error fatal"/>
+    <telemetron id="11" nombre="Gus XXX" idDivision="3" color="3" x="500"  y="222" info="Ferrocarril no pasando"/>
+    <telemetron id="12" nombre="Ford 22" idDivision="3" color="1" x="504"  y="80" info="Funcionando correctamente"/>
+    <telemetron id="13" nombre="Dallas F" idDivision="4" color="2" x="100" y="50" info="Ferrocarril pasando"/>
+    <telemetron id="14" nombre="CC 44" idDivision="4" color="1" x="200"  y="45" info="Error fatal"/>
+    <telemetron id="15" nombre="Augustus 4" idDivision="4" color="3" x="40"  y="200" info="Ferrocarril no pasando"/>
+    <telemetron id="16" nombre="Nemo" idDivision="4" color="1" x="260"  y="45" info="Funcionando correctamente"/>
+    <telemetron id="17" nombre="Col Mckey" idDivision="5" color="2" x="100" y="50" info="Ferrocarril pasando"/>
+    <telemetron id="18" nombre="Sophie" idDivision="5" color="1" x="200"  y="45" info="Error fatal"/>
+    <telemetron id="19" nombre="Fred" idDivision="5" color="3" x="40"  y="200" info="Ferrocarril no pasando"/>
+    <telemetron id="20" nombre="Ryan" idDivision="5" color="1" x="260"  y="45" info="Funcionando correctamente"/>
+</telemetrones>

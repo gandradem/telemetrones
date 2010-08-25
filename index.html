@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Sample Title</title>
+	<link rel="stylesheet" href="css/main.css" type="text/css" media="screen" />
+  <script src="js/mootools-1.2.4-core-jm.js" type="text/javascript" charset="utf-8" > </script>
+  <script src="js/mootools-1.2.4.4-more.js" type="text/javascript" charset="utf-8" > </script>
+  <script src="js/main.js" type="text/javascript" charset="utf-8" > </script>
+</head>
+<body>
+  <div id="container">
+
+    <div id="other_wrapper"> 
+      <ul>
+        <a id="zone_0_link" href="#"><span class="reset">Inicio </span><span class="slash">/</span> </a>
+        <a id="zone_1_link" href="#">Hermosillo <span class="slash">/</span> </a>
+        <a id="zone_2_link" href="#">Chihuahua <span class="slash">/</span> </a>
+        <a id="zone_3_link" href="#">Monterrey <span class="slash">/</span> </a>
+        <a id="zone_4_link" href="#">Centro <span class="slash">/</span> </a>
+        <a id="zone_5_link" href="#">Guadalajara</a>
+        <a href="data/data.xml">archivo xml</a>
+        <a id="clear_link" href="#">clear</a>
+        <a id="request_link" href="#">request data</a>
+      </ul>
+    </div>
+    <div id="dragables_wrapper">
+  	  <img id='dragable_item' src="images/t_green.png" />
+
+  	</div>
+      <div id='form_wrapper'>
+      <form id="telemetron_form" action="ajax.form.php" method="post">
+      	<div id="form_box">
+          <div>
+            <p>Id:</p>
+            <input type="text" id="telemetron_id" name="telemetron_id" value="" />
+          </div>
+          <div>
+            <p>Nombre:</p>
+            <input type="text" id="name_input" name="nombre" value="" />
+          </div>
+      		<div>
+            <p id="zone_text">Zona:</p><br/>
+      		</div>
+      		<input type="hidden" name="action" value="" id="form_action" />
+      		<input type="hidden" name="x" value="" id="x" />
+      		<input type="hidden" name="y" value="" id="y" />
+      		<input type="hidden" name="zone_id" id="zone_id" value="" />
+      		<input type="submit" name="button" id="submitter" />
+      		<input type="submit" name="cbutton" id="canceler" value="cancel" />
+      	  <span class="clr"><!-- spanner --></span>
+      	</div>
+      </form>
+      <div id="log">
+      	<h3>Response</h3>
+      	<div id="log_res"><!-- spanner --></div>
+      </div>
+      </div>    <div id='wrapper'>
+      <div id="zone_0" class="zone">
+      </div>
+      <div id="zone_1" class="zone">
+      </div>
+      <div id="zone_2" class="zone">
+      </div>
+      <div id="zone_3" class="zone">
+      </div>
+      <div id="zone_4" class="zone">
+      </div>
+      <div id="zone_5" class="zone">
+      </div>
+  	</div>
+	</div>
+</body>
+</html>
