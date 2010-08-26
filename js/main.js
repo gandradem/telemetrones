@@ -7,7 +7,7 @@ window.addEvent('domready', function() {
     var controller = {
 	    dropZone: drop,
 	    currentZoneId: 0,
-	    xmlData: undefined,
+	    jsonData: undefined,
 	    imagesPath: 'images/',
 	    normalizeCoordinates: function(coordinates) {
 	        var normalizedCoords = {
@@ -99,16 +99,17 @@ window.addEvent('domready', function() {
             return $('zone_'+zoneId);
 	    },
 	    requestData: function() {
-	        var request = new Request({
-                url: 'data/data.xml',
-                onSuccess: function(responseText, responseXML) {
-                    controller.setXMLData(responseXML);
+            var request = new Request.JSON({
+        		url: 'data/data.json',
+        		method: 'get',
+        		onSuccess: function(responseJSON, responseText) {
+                    controller.setJsonData(responseJSON);
                     controller.renderTelemetrones();
-                }
-            }).send();
+        		}
+        	}).send();
 	    },
-	    setXMLData: function(data) {
-	        this.xmlData = data;
+	    setJsonData: function(data) {
+	        this.jsonData = data;
 	    },
 	    insertTelemetronElement: function(telemetron_obj) {
 	        var html_image = new Element('img', {
@@ -154,25 +155,21 @@ window.addEvent('domready', function() {
             // return text;
         },
 	    renderTelemetrones: function() {
-            var telemetrones = $$(this.xmlData.childNodes[0].childNodes);
-            // alert(this.xmlData.childNodes[0].childNodes);
-            // console.debug(this.xmlData.childNodes[0].childNodes);
-            // console.debug(telemetrones);
-            // alert(telemetrones);
+            var telemetrones = this.jsonData.telemetrones;
             telemetrones.each(function(item, index){
-                var telemetron_obj = controller.createTelemetronFromXML(item);
+                var telemetron_obj = controller.createTelemetronFromJSON(item);
                 controller.insertTelemetronElement(telemetron_obj);
 	        });
 
 	    },
-	    createTelemetronFromXML: function(element) {
+	    createTelemetronFromJSON: function(obj) {
 	        var telemetron_obj = this.createTelemetron(
-	            element.getProperty('id'),
-	            element.getProperty('idDivision'),
-	            element.getProperty('x'),
-	            element.getProperty('y'),
-	            +element.getProperty('color'),
-	            element.getProperty('nombre')
+	            obj.id,
+	            obj.idDivision,
+	            obj.x,
+	            obj.y,
+	            +obj.color,
+	            obj.nombre
 	        );
 	        return telemetron_obj;
 	    },
@@ -330,14 +327,18 @@ window.addEvent('domready', function() {
        });
 	}
 	
-	$('clear_link').addEvent('click', function(e) {
-        controller.clearAll();
-    });
-    
-    $('request_link').addEvent('click', function(e) {
-        controller.clearAll();
-        controller.requestData();
-    });
+	if ($defined($('clear_link'))) {
+    	$('clear_link').addEvent('click', function(e) {
+            controller.clearAll();
+        });
+    }
+
+    if ($defined($('request_link'))) {
+        $('request_link').addEvent('click', function(e) {
+            controller.clearAll();
+            controller.requestData();
+        });
+    }
 	
 	controller.requestData();
 });

@@ -1,4 +1,4 @@
 {"telemetrones":[
-  {"name":"Name x", "id":"1", "idDivision":"1", "color":"1", "x":"10", "y":"11", "info":"12"}
+  {"name":"Name x", "id":"1", "idDivision":"1", "color":"1", "x":"10", "y":"11", "info":"12"},
   {"name":"Name y", "id":"2", "idDivision":"1", "color":"1", "x":"10", "y":"11", "info":"12"}
 ]}
