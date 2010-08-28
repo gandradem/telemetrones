@@ -1,4 +1,23 @@
 {"telemetrones":[
-  {"name":"Name x", "id":"1", "idDivision":"1", "color":"1", "x":"10", "y":"11", "info":"12"},
-  {"name":"Name y", "id":"2", "idDivision":"1", "color":"1", "x":"10", "y":"11", "info":"12"}
-]}
+	{ "id":"1", "nombre":"", "idDivision":"1", "color":"2", "x":"615", "y":"200", "info":""}, 
+    { "id":"2", "nombre":"", "idDivision":"1", "color":"1", "x":"620", "y":"145", "info":""}, 
+    { "id":"3", "nombre":"", "idDivision":"1", "color":"3", "x":"585", "y":"300", "info":""}, 
+    { "id":"4", "nombre":"", "idDivision":"1", "color":"1", "x":"399", "y":"145", "info":""}, 
+    { "id":"88", "nombre":"", "idDivision":"1", "color":"1", "x":"591", "y":"516", "info":""}, 
+    { "id":"5", "nombre":"", "idDivision":"2", "color":"2", "x":"667", "y":"50", "info":""}, 
+    { "id":"6", "nombre":"", "idDivision":"2", "color":"1", "x":"250", "y":"45", "info":""}, 
+    { "id":"7", "nombre":"", "idDivision":"2", "color":"3", "x":"540", "y":"225", "info":""}, 
+    { "id":"8", "nombre":"", "idDivision":"2", "color":"1", "x":"260", "y":"225", "info":""}, 
+    { "id":"9", "nombre":"", "idDivision":"3", "color":"2", "x":"663", "y":"371", "info":""}, 
+    { "id":"10", "nombre":"", "idDivision":"3", "color":"1", "x":"600", "y":"291", "info":""}, 
+    { "id":"11", "nombre":"", "idDivision":"3", "color":"3", "x":"500", "y":"222", "info":""}, 
+    { "id":"12", "nombre":"", "idDivision":"3", "color":"1", "x":"504", "y":"80", "info":""}, 
+    { "id":"13", "nombre":"", "idDivision":"4", "color":"2", "x":"100", "y":"50", "info":""}, 
+    { "id":"14", "nombre":"", "idDivision":"4", "color":"1", "x":"200", "y":"45", "info":""}, 
+    { "id":"15", "nombre":"", "idDivision":"4", "color":"3", "x":"40", "y":"200", "info":""}, 
+    { "id":"16", "nombre":"Nemo", "idDivision":"4", "color":"1", "x":"260", "y":"45", "info":""}, 
+    { "id":"17", "nombre":"", "idDivision":"5", "color":"2", "x":"100", "y":"50", "info":""}, 
+    { "id":"18", "nombre":"Sophie", "idDivision":"5", "color":"1", "x":"200", "y":"45", "info":""}, 
+    { "id":"19", "nombre":"Fred", "idDivision":"5", "color":"3", "x":"40", "y":"200", "info":""}, 
+    { "id":"20", "nombre":"Ryan", "idDivision":"5", "color":"1", "x":"260", "y":"45", "info":""}, 
+ ]}

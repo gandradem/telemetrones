@@ -171,6 +171,7 @@ window.addEvent('domready', function() {
 	            +obj.color,
 	            obj.nombre
 	        );
+            // console.debug(telemetron_obj);
 	        return telemetron_obj;
 	    },
 	    telemetronStateToPath: function(state) {
@@ -266,7 +267,8 @@ window.addEvent('domready', function() {
 	});
     $('canceler').addEvent('click', function(e) {
         e.stop();
-        if ($('new_telemetron')) {
+        if ($('new_telemetron') && 
+            ($('form_action').value == 'create')) {
             $('new_telemetron').destroy();
         }
         houdini.toggle_form();
