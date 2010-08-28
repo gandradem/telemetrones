@@ -19,5 +19,5 @@
     { "id":"17", "nombre":"", "idDivision":"5", "color":"2", "x":"100", "y":"50", "info":""}, 
     { "id":"18", "nombre":"Sophie", "idDivision":"5", "color":"1", "x":"200", "y":"45", "info":""}, 
     { "id":"19", "nombre":"Fred", "idDivision":"5", "color":"3", "x":"40", "y":"200", "info":""}, 
-    { "id":"20", "nombre":"Ryan", "idDivision":"5", "color":"1", "x":"260", "y":"45", "info":""}, 
+    { "id":"20", "nombre":"Ryan", "idDivision":"5", "color":"1", "x":"260", "y":"45", "info":""}
  ]}
