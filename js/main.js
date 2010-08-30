@@ -212,16 +212,22 @@ window.addEvent('domready', function() {
 
         var drag = clone.makeDraggable({
             droppables: drop_zones,
+            includeMargins: false,
             onComplete: function() {
+                console.debug('onComplete');
                 this.detach();
             },
             onEnter: function(el, over) {
-                over.tween('background-color','#98B5C1');
+                console.debug('onEnter');
+
+                // over.tween('background-color','#98B5C1');
+
             },
             onLeave: function(el, over) {
-                over.tween('background-color','#fff');
+                console.debug('onLeave');
             },
             onDrop: function(el, over) {
+                console.debug('onDrop');
                 if(over) {//over is not a name that tells you that it's about a dropabble area
                     var lastClone = clone.clone()
                     .setStyles({'opacity': 1, 'position': 'absolute'})
@@ -240,6 +246,7 @@ window.addEvent('domready', function() {
                 clone.dispose();
             },
             onCancel: function() {
+                console.debug('onCancel');
                 clone.destroy();
             }
         });
@@ -273,6 +280,9 @@ window.addEvent('domready', function() {
         }
         houdini.toggle_form();
     });
+    $('delete').addEvent('click', function(e) {
+        $('form_action').value = 'delete';
+    });
     
     // houdini hack, nada por aqui nada por alla
 	var houdini = {
@@ -286,6 +296,7 @@ window.addEvent('domready', function() {
 			    }).tween('height', '0px');
 			    $('form_box').hide();
 			    $('log').hide();
+                $('delete').hide();
 			    (function(){ 
 			        houdini.unMask();
 			    }).delay(2000);
@@ -296,8 +307,11 @@ window.addEvent('domready', function() {
                     duration: 1000
                 }).tween('height', '350px');
 			    (function(){ 
+			        if ($('form_action').value == 'edit') {			            
+    			        $('delete').show();
+			        }
 			        $('form_box').show();
-			        $('log').show();			    
+			        $('log').show();
 			    }).delay(1000);
 			}
 	    },

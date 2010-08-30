@@ -24,7 +24,7 @@ body {
   font-weight:bold;
   font-family:Lucida, Trebuchet, Tahoma, Arial, sans-serif;	
 /*  border:1px solid purple;*/
-  width:800px;
+/*  width:800px;*/
   height:25px;
   padding:5px 0 5px 35px;
   background-color: #929C9E;
@@ -181,8 +181,8 @@ span.reset {
 .tip {
 	color:#1B4073;
 	font-family:Lucida, Trebuchet, Tahoma, Arial, sans-serif;
-	  font-size:10px;
-padding:7px 5px 4px 5px;
+	font-size:9px;
+    padding:17px 5px 4px 13px;
 /* font-weight:bold;*/
 }
 
