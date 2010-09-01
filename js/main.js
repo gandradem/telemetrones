@@ -214,20 +214,20 @@ window.addEvent('domready', function() {
             droppables: drop_zones,
             includeMargins: false,
             onComplete: function() {
-                console.debug('onComplete');
+                // console.debug('onComplete');
                 this.detach();
             },
             onEnter: function(el, over) {
-                console.debug('onEnter');
+                // console.debug('onEnter');
 
                 // over.tween('background-color','#98B5C1');
 
             },
             onLeave: function(el, over) {
-                console.debug('onLeave');
+                // console.debug('onLeave');
             },
             onDrop: function(el, over) {
-                console.debug('onDrop');
+                // console.debug('onDrop');
                 if(over) {//over is not a name that tells you that it's about a dropabble area
                     var lastClone = clone.clone()
                     .setStyles({'opacity': 1, 'position': 'absolute'})
@@ -246,7 +246,7 @@ window.addEvent('domready', function() {
                 clone.dispose();
             },
             onCancel: function() {
-                console.debug('onCancel');
+                // console.debug('onCancel');
                 clone.destroy();
             }
         });
