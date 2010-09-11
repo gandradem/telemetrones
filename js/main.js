@@ -1,4 +1,7 @@
 window.addEvent('domready', function() {
+    
+    document.ondragstart = function () { return false; }; //IE hack
+    
     var drop = $('wrapper');
     var drop_zones = [$('zone_1'), $('zone_2'), $('zone_3'), $('zone_4'), $('zone_5')];
     var dragable = $('dragable_item');
@@ -51,6 +54,13 @@ window.addEvent('domready', function() {
 	            1,
 	            ''
 	        ), 'create');
+	    },
+	    injectTelemetron: function(coordinates, element, dropzone) {
+	            if (element) {
+                    element.setStyles({'opacity': 1, 'position': 'absolute'})
+                    .setStyles(coordinates)
+                    .inject(dropzone);
+                }
 	    },
 	    setCurrentZoneId: function(zone_id) {
             //console.debug('setting zone ' + zone_id);
@@ -127,14 +137,10 @@ window.addEvent('domready', function() {
                         houdini.toggle_form();
                     },
                     'mouseover': function(){
-                        // alert('mouseovered');
                         // this.retrieve('tooltip').show();
                     }
                 }
             });
-            // console.debug('inserting:')
-            // console.debug(telemetron_obj);
-            // console.debug(html_image);
             html_image.store('tooltip', new Tips(html_image, {
                 className: 'tooltip'
             }));
@@ -171,7 +177,6 @@ window.addEvent('domready', function() {
 	            +obj.color,
 	            obj.nombre
 	        );
-            // console.debug(telemetron_obj);
 	        return telemetron_obj;
 	    },
 	    telemetronStateToPath: function(state) {
@@ -194,8 +199,6 @@ window.addEvent('domready', function() {
 	        for (var i=1; i <= 5; i++) {
 	            var element = this.zoneElementById(i);
 	            element.getChildren().each(function(item, index){
-                    // console.debug(index);
-                    // console.debug(item);
                     item.destroy();
 	            });
 	        }
@@ -204,7 +207,7 @@ window.addEvent('domready', function() {
 	
     dragable.addEvent('mousedown', function(e) {
         e.stop();
-
+        
         var clone = this.clone()
         .setStyles(this.getCoordinates())
         .setStyles({'opacity': 0.7, 'position': 'absolute'})
@@ -214,36 +217,17 @@ window.addEvent('domready', function() {
             droppables: drop_zones,
             includeMargins: false,
             onComplete: function() {
-                // console.debug('onComplete');
                 this.detach();
             },
-            onEnter: function(el, over) {
-                // console.debug('onEnter');
-
-                // over.tween('background-color','#98B5C1');
-
-            },
-            onLeave: function(el, over) {
-                // console.debug('onLeave');
-            },
+            onEnter: function(el, over) {},
+            onLeave: function(el, over) {},
             onDrop: function(el, over) {
-                // console.debug('onDrop');
-                if(over) {//over is not a name that tells you that it's about a dropabble area
-                    var lastClone = clone.clone()
-                    .setStyles({'opacity': 1, 'position': 'absolute'})
-                    .setStyles(clone.getCoordinates())
-                    .inject(over);
-                    over.tween('background-color','#fff');
-                    // console.debug(lastClone.getCoordinates(over));
-                    // console.debug(clone.getCoordinates(over));
-                    // console.debug(over.getCoordinates());
-                    // console.debug(clone.getCoordinates());
-                    // console.debug(clone.getCoordinates().left - over.getCoordinates().left);
+                if(over) {//over is not a good name
                     controller.dropTelemetronCallBack(clone.getCoordinates(over));
-                    lastClone.id = 'new_telemetron';
+                    clone.id = 'new_telemetron';
                     houdini.toggle_form();
                 }
-                clone.dispose();
+                // clone.dispose();
             },
             onCancel: function() {
                 // console.debug('onCancel');
@@ -282,6 +266,9 @@ window.addEvent('domready', function() {
     });
     $('delete').addEvent('click', function(e) {
         $('form_action').value = 'delete';
+        $($('telemetron_id').value).destroy();
+        // e.target.destroy();
+        // console.debug(e);
     });
     
     // houdini hack, nada por aqui nada por alla
